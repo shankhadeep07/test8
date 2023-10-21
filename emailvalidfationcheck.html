@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+     <head>
+           <title> Email Validation </title>
+                 <script type="text/javascript">
+                              function validation()
+                                  {
+                                    //event & event.preventDefault(); 
+                                    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                                    //var emailVal = document.forms["testForm"]["emailInput"].value;
+                                    var emailVal = document.getElementById("email").value;
+
+                                   // console.log(emailVal);
+                                    if (reg.test(emailVal) == false)
+                                     {
+                                         alert('Invalid Email Address');
+                                         return false;
+                                        }
+                                  //alert('Valid Email Address');
+                                  //return true;
+                            }
+     </script>
+
+
+
+
+
+</head>
+ 
+<body>
+       <form name="testForm" onSubmit="return validation()">
+       <label> Email </label>
+        &nbsp;&nbsp;
+       <input type="text" id="email" required/>
+       <br />
+             <button>Submit</button>
+  </form>
+</body>
+</html>
